@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -15,90 +16,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/banner_image"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/banner" />
-
-        <LinearLayout
-            android:id="@+id/search_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
-
-            <EditText
-                android:id="@+id/search_edittext"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:hint="@string/search_for_clothing"
-                android:inputType="text"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:drawableRight="@drawable/baseline_search_24"
-                android:drawablePadding="8dp" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/advertisement_image1"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_below="@id/banner_image"
-            android:layout_marginTop="250dp"
-            android:src="@drawable/shop_6" />
-
-        <ImageView
-            android:id="@+id/advertisement_image2"
-            android:layout_width="135dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="143dp"
-            android:layout_marginTop="250dp"
-            android:src="@drawable/shop_5" />
-
-
-        <ImageView
-            android:id="@+id/advertisement_image3"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="250dp"
-            android:layout_marginLeft="275dp"
-            android:src="@drawable/shop_8" />
-
-        <ImageView
-            android:id="@+id/advertisement_image4"
-            android:layout_width="400dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="390dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/shop_10" />
-
-        <ImageView
-            android:id="@+id/advertisement_image4"
-            android:layout_width="210dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="525dp"
-            android:src="@drawable/shop_11" />
-
-        <ImageView
-            android:id="@+id/advertisement_image5"
-            android:layout_width="210dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="205dp"
-            android:layout_marginTop="525dp"
-            android:layout_marginRight="5dp"
-            android:src="@drawable/shop_12" />
-
-
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

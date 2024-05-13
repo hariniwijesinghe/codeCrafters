@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.clothing.databinding.ActivityMainBinding;
-import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity {
 

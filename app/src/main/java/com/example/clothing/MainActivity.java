@@ -1,6 +1,7 @@
 package com.example.clothing;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +13,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.clothing.databinding.ActivityMainBinding;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
+        /*databaseReference= FirebaseDatabase.getInstance().getReference("This is the path");
+        databaseReference.setValue("Here there").addOnSuccessListener(new onSuccessListener<Void>(){
+            public void onSuccess(Void unused){
+                Toast.makeText(getApplicationContext(),"Success", Toast.LENGTH_SHORT).show();
+            }
+        })*/
     }
 
     private void replaceFragment(Fragment fragment) {

@@ -20,4 +20,20 @@
     <string name="overall_rating">Overall Rating</string>
     <string name="total_reviews_10">Total Reviews: 10</string>
     <string name="submit">Submit</string>
+    <string name="help">Help</string>
+    <string name="my_collection">My Collection</string>
+    <string name="store_description">Store Description</string>
+    <string name="get_direction">Get Direction</string>
+
+    <string-array name="store_array">
+        <item>Alpha Apparel</item>
+        <item>Boutique Bliss</item>
+        <item>Chic Couture</item>
+        <item>Dapper Denim</item>
+        <item>Elegant Ensembles</item>
+        <item>Fashion Frenzy</item>
+        <item>Glamour Galore</item>
+        <item>Haute Haven</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

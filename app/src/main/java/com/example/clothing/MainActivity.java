@@ -1,6 +1,7 @@
 package com.example.clothing;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
+        // Add OnClickListener to the search EditText
+        binding.frameLayout.setOnClickListener(view -> {
+            // Replace current fragment with SearchResultsFragment when search EditText is clicked
+            replaceFragment(new SearchResultsFragment());
+        });
+
     }
 
     private void replaceFragment(Fragment fragment) {

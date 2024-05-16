@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     public EditText signupEmail, signupPassword;
     Button btnSignUp;
     TextView loginRedirectText;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         //
         firebaseAuth = FirebaseAuth.getInstance();
         signupEmail = findViewById(R.id.edEmail);
@@ -44,33 +45,45 @@ public class MainActivity extends AppCompatActivity {
                     signupPassword.setError("Set your password");
                     signupPassword.requestFocus();
                 } else if (emailID.isEmpty() && paswd.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
                 } else if (!(emailID.isEmpty() && paswd.isEmpty())) {
-                    firebaseAuth.createUserWithEmailAndPassword(emailID, paswd).addOnCompleteListener(MainActivity.this, new OnCompleteListener() {
+                    firebaseAuth.createUserWithEmailAndPassword(emailID, paswd).addOnCompleteListener(MainActivity2.this, new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
 
                             if (!task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this.getApplicationContext(),
+                                Toast.makeText(MainActivity2.this.getApplicationContext(),
                                         "SignUp unsuccessful: " + task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(MainActivity.this, UserActivity.class));
+                                startActivity(new Intent(MainActivity2.this, UserActivity.class));
                             }
                         }
                     });
                 } else {
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(MainActivity.this, LoginActivity.class);
+                Intent I = new Intent(MainActivity2.this, LoginActivity.class);
                 startActivity(I);
             }
         });
 
+        Button crashButton = new Button(this);
+        crashButton.setText("Test Crash");
+        crashButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                throw new RuntimeException("Test Crash"); // Force a crash
+            }
+        });
+
+        addContentView(crashButton, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
     }
 }

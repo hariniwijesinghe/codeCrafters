@@ -62,7 +62,4 @@ public class MyProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_my_profile, container, false);
     }
 
-
-    public void onMyCollectionButtonClick(View view) {
-    }
 }

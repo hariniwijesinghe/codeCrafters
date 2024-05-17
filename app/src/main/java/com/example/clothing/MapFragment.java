@@ -20,16 +20,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapFragment extends Fragment {
 
-    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
+    private final OnMapReadyCallback callback = googleMap -> {
 
-        @Override
-        public void onMapReady(GoogleMap googleMap) {
-
-            // Add a marker in Sydney and move the camera
-            LatLng melbourne = new LatLng(-37, 144);
-            googleMap.addMarker(new MarkerOptions().position(melbourne).title("Marker in Melbourne"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(melbourne));
-        }
+        // Add a marker in Sydney and move the camera
+        LatLng melbourne = new LatLng(-37, 144);
+        googleMap.addMarker(new MarkerOptions().position(melbourne).title("Marker in Melbourne"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(melbourne));
     };
 
     @Nullable

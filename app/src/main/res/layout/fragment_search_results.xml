@@ -110,7 +110,7 @@
                             android:id="@+id/store_name_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Store Name"
+                            android:text="@string/store_name"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -157,6 +157,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:src="@drawable/shop_2"
+                        android:contentDescription="@string/clothing_name"
                         android:scaleType="centerCrop" />
 
                     <!-- Store Details (Right Align) -->

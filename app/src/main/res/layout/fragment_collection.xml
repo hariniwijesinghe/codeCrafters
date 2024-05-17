@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:drawableStart="@drawable/baseline_favorite_24"
-        android:drawablePadding="8dp"
+        android:drawablePadding="10dp"
         android:text="My Collection"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -22,10 +22,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:background="#D7BCC8"
+        android:layout_marginTop="100dp"
+        android:background="#98B6B1"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/image_view_clothing"
@@ -55,10 +55,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:background="#98B6B1"
+        android:layout_marginTop="300dp"
+        android:background="#D7BCC8"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/image_view_clothing11"
@@ -88,10 +88,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="500dp"
         android:background="#629677"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/image_view_clothing3"

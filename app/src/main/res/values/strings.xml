@@ -36,4 +36,5 @@
         <item>Haute Haven</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="google_map">google_map</string>
 </resources>

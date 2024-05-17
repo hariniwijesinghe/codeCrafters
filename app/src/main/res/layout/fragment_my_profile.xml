@@ -6,17 +6,10 @@
     tools:context=".MyProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <!-- Profile Picture and Name -->
-
-        <LinearLayout
+    <LinearLayout
             android:id="@+id/profile_info_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:layout_height="200dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="vertical">
@@ -45,60 +38,58 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profile_options_layout"
-            android:layout_width="380dp"
-            android:layout_height="360dp"
-            android:layout_below="@id/profile_info_layout"
-            android:layout_marginTop="70dp"
-            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/profile_options_layout"
+        android:layout_width="380dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/my_collection_option"
-                android:layout_width="340dp"
-                android:layout_height="80dp"
-                android:background="#98B6B1"
-                android:drawablePadding="8dp"
-                android:onClick="onMyCollectionButtonClick"
-                android:padding="8dp"
-                android:text="My Collection"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/my_collection_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:onClick="onMyCollectionButtonClick"
+            android:padding="10dp"
+            android:text="My Collection"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/my_activity_option"
-                android:layout_width="340dp"
-                android:layout_height="80dp"
-                android:background="#98B6B1"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:text="My Activity"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/my_activity_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="My Activity"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/privacy_option"
-                android:layout_width="340dp"
-                android:layout_height="80dp"
-                android:background="#98B6B1"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:text="Privacy"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/privacy_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="Privacy"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/help_option"
-                android:layout_width="340dp"
-                android:layout_height="80dp"
-                android:background="#98B6B1"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:text="@string/help"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/help_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="@string/help"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </FrameLayout>

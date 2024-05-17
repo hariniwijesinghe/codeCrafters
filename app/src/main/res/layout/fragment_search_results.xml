@@ -5,32 +5,29 @@
     android:layout_height="match_parent"
     tools:context=".SearchResultsFragment">
 
-    <!-- Map View -->
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/map_view"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
-
     <EditText
-            android:id="@+id/search_edittext"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:padding="3dp"
-            android:drawableEnd="@drawable/baseline_search_24"
-            android:drawablePadding="8dp"
-            android:hint="@string/search_for_clothing"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="@drawable/edittext_outline"/>
-
-    </com.google.android.gms.maps.MapView>
-
+        android:id="@+id/search_edittext"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_outline"
+        android:drawableEnd="@drawable/baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="@string/search_for_clothing"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.clothing.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:layout_below="@id/search_edittext"
+        android:layout_centerHorizontal="true" />
 
 
     <!-- Filter Icon and Sorting Buttons -->
@@ -38,7 +35,7 @@
         android:id="@+id/filter_sort_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/map_view"
+        android:layout_below="@id/fragment"
         android:layout_marginTop="6dp"
         android:layout_marginStart="100dp"
         android:padding="8dp">
@@ -94,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"/>
 
-                    <!-- Store Picture (Left Align) -->
+                <!-- Store Picture (Left Align) -->
 
                 <!-- Store Details (Right Align) -->
                 <RelativeLayout
@@ -118,7 +115,8 @@
                         android:layout_marginStart="16dp"
                         android:gravity="end">
 
-                        <!-- Store Name -->
+
+                    <!-- Store Name -->
                         <TextView
                             android:id="@+id/store_name_1"
                             android:layout_width="wrap_content"
@@ -219,66 +217,7 @@
 
                     </RelativeLayout>
                 </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp">
 
-                    <!-- Store Picture (Left Align) -->
-                    <ImageView
-                        android:id="@+id/store_picture_3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/shop_6"
-                        android:scaleType="centerCrop" />
-
-                    <!-- Store Details (Right Align) -->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/store_picture_3"
-                        android:layout_marginStart="16dp"
-                        android:gravity="end">
-
-                        <!-- Store Name -->
-                        <TextView
-                            android:id="@+id/store_name_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Store Name"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <!-- Total Review Count -->
-                        <TextView
-                            android:id="@+id/total_review_count"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/store_name_3"
-                            android:text="Total Reviews: 100"
-                            android:textSize="16sp" />
-
-                        <!-- Star Rating -->
-                        <RatingBar
-                            android:id="@+id/star_rating_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/total_review_count"
-                            android:numStars="5"
-                            android:stepSize="0.1"
-                            android:rating="4.5" />
-
-                        <!-- Store Description -->
-                        <TextView
-                            android:id="@+id/store_description"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/star_rating_3"
-                            android:text="@string/store_description"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-                </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>

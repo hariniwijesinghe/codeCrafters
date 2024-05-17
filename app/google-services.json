@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "738864217333",
+    "firebase_url": "https://auth-5ee36-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "auth-5ee36",
+    "storage_bucket": "auth-5ee36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738864217333:android:523e013c3eabf456e899bc",
+        "android_client_info": {
+          "package_name": "com.example.firebasestorage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeXKzTXoau92ImQIAcqIgXslM4qZkxVNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738864217333:android:a702b2451ef71955e899bc",
+        "android_client_info": {
+          "package_name": "com.tmdsimple.myfinancerecords"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeXKzTXoau92ImQIAcqIgXslM4qZkxVNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -19,6 +19,7 @@
         android:padding="5dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
+        android:importantForAutofill="no"
         android:textStyle="bold" />
     <!-- Map Fragment -->
     <fragment
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
+            android:contentDescription="@string/profile_image"
             android:src="@drawable/baseline_filter_alt_24" />
 
         <Button
@@ -55,7 +57,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/filter_icon"
-            android:text="Open" />
+            android:text="@string/open" />
 
         <Button
             android:id="@+id/button_ratings"
@@ -64,7 +66,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/button_open"
-            android:text="Ratings" />
+            android:text="@string/ratings" />
 
     </RelativeLayout>
 
@@ -79,21 +81,7 @@
             android:orientation="vertical"
             android:padding="2dp">
 
-            <!-- Store Results -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
                 <!-- Store Item Layout -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"/>
-
-                <!-- Store Picture (Left Align) -->
-
-                <!-- Store Details (Right Align) -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,6 +93,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:src="@drawable/shop_1"
+                        android:contentDescription="@string/my_collection"
                         android:scaleType="centerCrop" />
 
                     <!-- Store Details (Right Align) -->
@@ -131,7 +120,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/store_name_1"
-                            android:text="Total Reviews: 100"
+                            android:text="@string/total_reviews_100"
                             android:textSize="16sp" />
 
                         <!-- Star Rating -->
@@ -150,7 +139,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/star_rating_1"
-                            android:text="Store Description"
+                            android:text="@string/store_description"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -183,7 +172,7 @@
                             android:id="@+id/store_name_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Store Name"
+                            android:text="@string/store_name"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -193,7 +182,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/store_name_2"
-                            android:text="Total Reviews: 100"
+                            android:text="@string/total_reviews_100"
                             android:textSize="16sp" />
 
                         <!-- Star Rating -->
@@ -212,7 +201,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/star_rating_2"
-                            android:text="Store Description"
+                            android:text="@string/store_description"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
@@ -220,7 +209,6 @@
 
             </LinearLayout>
 
-        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

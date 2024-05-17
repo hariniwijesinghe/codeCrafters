@@ -63,5 +63,6 @@ public class MyProfileFragment extends Fragment {
     }
 
 
-
+    public void onMyCollectionButtonClick(View view) {
+    }
 }

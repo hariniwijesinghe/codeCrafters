@@ -37,4 +37,15 @@
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_map">google_map</string>
+    <string name="open">Open</string>
+    <string name="ratings">Ratings</string>
+    <string name="store_name">Store Name</string>
+    <string name="total_reviews_100">Total Reviews: 100</string>
+    <string name="price">Price</string>
+    <string name="clothing_name">Clothing Name</string>
+    <string name="john_doe">John Doe</string>
+    <string name="johndoe_example_com">johndoe@example.com</string>
+    <string name="my_activity">My Activity</string>
+    <string name="privacy">Privacy</string>
+    <string name="profile_image">profile image</string>
 </resources>

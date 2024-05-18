@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -16,6 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/clothing_name"
         android:src="@drawable/shop_1" />
 
     <LinearLayout
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:text="Store Name"
+            android:text="@string/store_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <!--        <TextView-->
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:text="Hours: 9 AM to 9 PM" />
+            android:text="@string/hours_9_am_to_9_pm" />
 
         <!--        <TextView-->
         <!--            android:id="@+id/tvStoreWebsite"-->

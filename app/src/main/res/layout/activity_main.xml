@@ -22,15 +22,13 @@
             android:id="@+id/btnSortByRating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sort by Rating" />
+            android:text="@string/sort_by_rating" />
 
         <Button
             android:id="@+id/btnSortByWorkingHours"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sort by Working Hours" />
+            android:text="@string/sort_by_working_hours" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

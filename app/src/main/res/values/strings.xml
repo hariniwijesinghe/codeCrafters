@@ -48,4 +48,7 @@
     <string name="my_activity">My Activity</string>
     <string name="privacy">Privacy</string>
     <string name="profile_image">profile image</string>
+    <string name="hours_9_am_to_9_pm">Hours: 9 AM to 9 PM</string>
+    <string name="sort_by_working_hours">Sort by Working Hours</string>
+    <string name="sort_by_rating">Sort by Rating</string>
 </resources>

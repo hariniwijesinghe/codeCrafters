@@ -109,7 +109,7 @@ public class SearchResultsFragment extends Fragment {
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 storeList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Store store = snapshot.getValue(Store.class);

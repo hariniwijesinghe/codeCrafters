@@ -1,6 +1,9 @@
 package com.example.clothing;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -43,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
             replaceFragment(new SearchResultsFragment());
         });
 
+        // Add button to open MainActivity2
+        Button btnOpenMainActivity2 = new Button(this);
+        btnOpenMainActivity2.setText("Open MainActivity2");
+        btnOpenMainActivity2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+        binding.getRoot().addView(btnOpenMainActivity2);
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -51,5 +65,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
-
 }

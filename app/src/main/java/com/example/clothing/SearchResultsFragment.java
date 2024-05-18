@@ -8,57 +8,133 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchResultsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
+import android.widget.Button;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class SearchResultsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private final List<Store> storeList = new ArrayList<>();
+    private StoreAdapter storeAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SearchResultsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchResultsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SearchResultsFragment newInstance(String param1, String param2) {
-        SearchResultsFragment fragment = new SearchResultsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_search_results, container, false);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        storeAdapter = new StoreAdapter(storeList);
+        recyclerView.setAdapter(storeAdapter);
+
+        Button btnSortByRating = view.findViewById(R.id.btnSortByRating);
+        Button btnSortByWorkingHours = view.findViewById(R.id.btnSortByWorkingHours);
+
+        btnSortByRating.setOnClickListener(v -> sortAndDisplayStores("rating"));
+        btnSortByWorkingHours.setOnClickListener(v -> sortAndDisplayStores("workingHours"));
+
+        initFirebaseDb();
+
+        return view;
+    }
+
+    private void initFirebaseDb() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("stores");
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()) {
+                    // If no data exists, add the stores
+                    addMultipleStoresToDatabase();
+                }
+                // Always read data
+                readDataFromDatabase();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Firebase", "Failed to read value.", databaseError.toException());
+            }
+        });
+    }
+
+    private void addMultipleStoresToDatabase() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("stores");
+
+        List<Store> storeList = Arrays.asList(
+                new Store("Store One", 4.5, "1234567890", "123 Example St", "9 AM to 9 PM", "http://www.example.com"),
+                new Store("Store Two", 4.3, "1234567891", "124 Example St", "10 AM to 8 PM", "http://www.storetwo.com"),
+                new Store("Store Three", 4.7, "1234567892", "125 Example St", "8 AM to 10 PM", "http://www.storethree.com"),
+                new Store("Store Four", 4.5, "1234567890", "123 Example St", "9 AM to 9 PM", "http://www.example.com"),
+                new Store("Store Five", 4.3, "1234567891", "124 Example St", "10 AM to 8 PM", "http://www.storetwo.com"),
+                new Store("Store Six", 4.7, "1234567892", "125 Example St", "8 AM to 10 PM", "http://www.storethree.com"),
+                new Store("Store Seven", 4.5, "1234567890", "123 Example St", "9 AM to 9 PM", "http://www.example.com"),
+                new Store("Store Eight", 4.3, "1234567891", "124 Example St", "10 AM to 8 PM", "http://www.storetwo.com"),
+                new Store("Store Nine", 4.7, "1234567892", "125 Example St", "8 AM to 10 PM", "http://www.storethree.com")
+                // Additional stores can be added here
+        );
+
+        for (Store store : storeList) {
+            String storeId = myRef.push().getKey(); // Generate a new unique key for each store
+            if (storeId != null) {
+                myRef.child(storeId).setValue(store)
+                        .addOnSuccessListener(aVoid -> Log.d("Firebase", "Store added successfully: " + store.getName()))
+                        .addOnFailureListener(e -> Log.e("Firebase", "Failed to add store: " + store.getName(), e));
+            }
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_results, container, false);
+    private void readDataFromDatabase() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("stores");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                storeList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Store store = snapshot.getValue(Store.class);
+                    if (store != null) {
+                        storeList.add(store);
+                    }
+                }
+                storeAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Firebase", "Failed to read value.", databaseError.toException());
+            }
+        });
+    }
+
+    private void sortAndDisplayStores(String criteria) {
+        if (criteria.equals("rating")) {
+            // Sort by rating in descending order
+            Collections.sort(storeList, (store1, store2) -> Double.compare(store2.getRating(), store1.getRating()));
+        } else if (criteria.equals("workingHours")) {
+            // Sort by working hours in alphabetical order (not really meaningful, but kept as an example)
+            Collections.sort(storeList, Comparator.comparing(Store::getWorkingHours));
+        }
+        storeAdapter.notifyDataSetChanged();
     }
 }

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Clothing</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_clothing">Search Clothing</string>
+    <string name="search_for_clothing">Search for Clothing</string>
+    <string name="profile">profile</string>
+    <string name="review">review</string>
+    <string name="favorite">favorite</string>
+    <string name="collection">Collection</string>
+    <string name="profile_page">Profile Page</string>
+    <string name="review_page">Review Page</string>
+    <string name="collection_page">Collection Page</string>
+    <string name="home">Home</string>
+    <string name="my_profile">My Profile</string>
+    <string name="leave_a_review">Leave a Review</string>
+    <string name="write_your_review_here">Write your review here…</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="check_ins">Check Ins</string>
+    <string name="overall_rating">Overall Rating</string>
+    <string name="total_reviews_10">Total Reviews: 10</string>
+    <string name="submit">Submit</string>
+    <string name="help">Help</string>
+    <string name="my_collection">My Collection</string>
+    <string name="store_description">Store Description</string>
+    <string name="get_direction">Get Direction</string>
+
+    <string-array name="store_array">
+        <item>Alpha Apparel</item>
+        <item>Boutique Bliss</item>
+        <item>Chic Couture</item>
+        <item>Dapper Denim</item>
+        <item>Elegant Ensembles</item>
+        <item>Fashion Frenzy</item>
+        <item>Glamour Galore</item>
+        <item>Haute Haven</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="google_map">google_map</string>
+    <string name="open">Open</string>
+    <string name="ratings">Ratings</string>
+    <string name="store_name">Store Name</string>
+    <string name="total_reviews_100">Total Reviews: 100</string>
+    <string name="price">Price</string>
+    <string name="clothing_name">Clothing Name</string>
+    <string name="john_doe">John Doe</string>
+    <string name="johndoe_example_com">johndoe@example.com</string>
+    <string name="my_activity">My Activity</string>
+    <string name="privacy">Privacy</string>
+    <string name="profile_image">profile image</string>
+    <string name="hours_9_am_to_9_pm">Hours: 9 AM to 9 PM</string>
+    <string name="sort_by_working_hours">Sort by Working Hours</string>
+    <string name="sort_by_rating">Sort by Rating</string>
+    <string name="add_review">Add Review</string>
+    <string name="call">Call</string>
+</resources>

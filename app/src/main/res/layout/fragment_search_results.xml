@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchResultsFragment">
+
+    <EditText
+        android:id="@+id/search_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_outline"
+        android:drawableEnd="@drawable/baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="@string/search_for_clothing"
+        android:inputType="text"
+        android:padding="3dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:importantForAutofill="no"
+        android:textStyle="bold" />
+
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.example.clothing.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:layout_below="@id/search_edittext"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Filter Icon and Sorting Buttons -->
+    <RelativeLayout
+        android:id="@+id/filter_sort_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map_fragment"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/filter_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/profile_image"
+            android:src="@drawable/baseline_filter_alt_24" />
+
+        <Button
+            android:id="@+id/btnSortByRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/btnSortByWorkingHours"
+            android:text="@string/ratings" />
+
+        <Button
+            android:id="@+id/btnSortByWorkingHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_toEndOf="@id/filter_icon"
+            android:text="@string/open" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/filter_sort_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:visibility="visible" />
+    </ScrollView>
+
+</RelativeLayout>

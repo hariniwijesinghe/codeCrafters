@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+            android:id="@+id/profile_info_layout"
+            android:layout_width="match_parent"
+        android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/profile_image"
+                android:src="@drawable/baseline_co_present_24" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/john_doe"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/johndoe_example_com"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_options_layout"
+        android:layout_width="380dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/my_collection_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="@string/my_collection"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/my_activity_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="@string/my_activity"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/privacy_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="@string/privacy"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/help_option"
+            android:layout_width="340dp"
+            android:layout_height="80dp"
+            android:background="#98B6B1"
+            android:drawablePadding="8dp"
+            android:padding="10dp"
+            android:text="@string/help"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</FrameLayout>

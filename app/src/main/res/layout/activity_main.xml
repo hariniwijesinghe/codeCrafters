@@ -30,11 +30,6 @@
             android:layout_height="wrap_content"
             android:text="@string/sort_by_working_hours" />
 
-        <Button
-            android:id="@+id/btnOpenMainActivity2"
-            android:layout_width="88dp"
-            android:layout_height="91dp"
-            android:text="Userlogin" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

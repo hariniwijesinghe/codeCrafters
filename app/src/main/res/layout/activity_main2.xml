@@ -42,7 +42,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:background="@drawable/custom_round_background"
-                android:drawableStart="@drawable/email"
+                android:drawableStart="@drawable/baseline_attach_email_24"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
                 android:hint="Email"

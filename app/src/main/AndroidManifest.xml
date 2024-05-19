@@ -30,7 +30,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
 
-
+        <!--<activity
+            android:name=".UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />-->
         <activity
             android:name=".MainActivity2"
             android:exported="true"/>

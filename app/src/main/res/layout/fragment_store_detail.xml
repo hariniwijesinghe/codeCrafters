@@ -9,54 +9,51 @@
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
 
-        <!-- Store Picture (Left Align) -->
         <ImageView
             android:id="@+id/store_picture_1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="107dp"
+            android:layout_height="148dp"
             android:scaleType="centerCrop"
             android:src="@drawable/shop_1" />
 
-        <!-- Store Details (Right Align) -->
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_width="253dp"
+            android:layout_height="142dp"
+            android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/store_picture_1"
             android:gravity="end">
 
-            <!-- Store Name -->
             <TextView
                 android:id="@+id/store_name_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Store Name"
+                android:text="@string/store_name"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <!-- Total Review Count -->
             <TextView
                 android:id="@+id/total_review_count_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/store_name_1"
-                android:text="Total Reviews: 100"
+                android:text="@string/total_reviews_100"
                 android:textSize="16sp" />
 
-            <!-- Star Rating -->
             <RatingBar
                 android:id="@+id/star_rating_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/total_review_count_1"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
                 android:numStars="5"
                 android:rating="4.5"
-                android:stepSize="0.1" />
+                android:stepSize="0.05" />
 
 
         </RelativeLayout>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -67,31 +64,29 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <!-- Each menu item can be a Button or TextView -->
         <Button
             android:id="@+id/call_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Call"/>
-
-        <!-- Add other menu items here -->
+            android:text="@string/call"
+            android:layout_marginEnd="8dp"/>
 
         <Button
             android:id="@+id/add_review_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Review"/>
-
+            android:text="@string/add_review"
+            android:layout_marginStart="8dp"/>
 
     </LinearLayout>
 
-    <!-- Get Direction Button -->
     <fragment
         android:id="@+id/map_fragment"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="374dp"
+        android:name="com.example.clothing.MapFragment"
+        android:layout_width="match_parent"
         android:layout_height="252dp"
-        android:layout_marginTop="260dp" />
+        android:layout_marginTop="260dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/get_direction_button"

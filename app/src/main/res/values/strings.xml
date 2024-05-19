@@ -51,4 +51,6 @@
     <string name="hours_9_am_to_9_pm">Hours: 9 AM to 9 PM</string>
     <string name="sort_by_working_hours">Sort by Working Hours</string>
     <string name="sort_by_rating">Sort by Rating</string>
+    <string name="add_review">Add Review</string>
+    <string name="call">Call</string>
 </resources>

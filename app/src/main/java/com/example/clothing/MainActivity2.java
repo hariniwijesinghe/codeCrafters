@@ -1,6 +1,7 @@
 package com.example.clothing;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -74,7 +76,10 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         Button crashButton = new Button(this);
-        crashButton.setText("Test Crash");
+        crashButton.setText("Back");
+        crashButton.setBackgroundColor(Color.parseColor("#FAC8CD")); // Set button background color
+        crashButton.setTextColor(Color.BLACK); // Set text color to white
+
         crashButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,5 +90,15 @@ public class MainActivity2 extends AppCompatActivity {
         addContentView(crashButton, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(
+                ConstraintLayout.LayoutParams.WRAP_CONTENT,
+                ConstraintLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
+        params.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
+
+        params.width = 100; // Width in pixels
+        params.height = 75; // Height in pixels
     }
 }

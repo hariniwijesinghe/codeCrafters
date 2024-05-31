@@ -77,9 +77,9 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Not sucessfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Not successful", Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(LoginActivity.this, UserActivity.class));
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             }
                         }
                     });
@@ -96,5 +96,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         firebaseAuth.addAuthStateListener(authStateListener);
 
+    }
+    private void navigateToHomePage() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("navigateToHome", true); // Passing a flag to indicate navigation to HomeFragment
+        startActivity(intent);
+        finish(); // Close the login activity
     }
 }

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     id("com.google.gms.google-services")
     alias(libs.plugins.googleAndroidLibrariesMapsplatformSecretsGradlePlugin)
+    id("com.google.firebase.firebase-perf")
 }
 
 android {
@@ -44,7 +45,13 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.play.services.maps)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.perf)
     testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+
+
+    // Android Instrumentation Testing dependencies
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

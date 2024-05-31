@@ -68,7 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="Login"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                />
 
             <TextView
                 android:id="@+id/txtRegister"

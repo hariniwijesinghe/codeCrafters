@@ -116,7 +116,7 @@ public class SearchResultsFragment extends Fragment implements StoreAdapter.OnSt
         if (sortBy.equals("rating")) {
             Collections.sort(storeList, Comparator.comparingDouble(Store::getRating).reversed());
         } else if (sortBy.equals("workingHours")) {
-            Collections.sort(storeList, Comparator.comparing(Store::getWorkingHours));
+            Collections.sort(storeList, Comparator.comparing(Store::getWorkingHours).reversed());
         }
         storeAdapter.notifyDataSetChanged();
     }
